@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+	<title>{{title}}</title>
+</head>
+<body>
+	<div class="jumbotron jumbotron-fluid bg-dark text-white text-center" style="background:lightblue">
+		<div class="container" >
+
+		<h1 class="display-2" style="font-family: Parkavenue">{{title}}</h1>
+		</div>
+	</div>
+
+<div class="container class-center">
+
+	<div class="row">
+		{% for item in list %}
+		<div class="col-md-12 col-lg-12">
+					<div class="card">
+						
+						<div class="card-block text-center">
+							<h2 class="display-5" style="font-weight: 600; font-family: New Century Schoolbook">{{item["title"]}}
+							</h2>
+								<h4 class="text-left"; style="font-family: Zapf Chancery"> 
+									<div class="text-right" style="font-style: italic">~ by {{item["author"]}}<br>
+									</div>
+									<div class="text-muted">Published:{{item["publishedAt"]}}<br>
+									</div>
+									{{item["description"]}}<br>
+									<a href="{{item['url']}}">Click here to know more </a><br>
+									<img src="{{item['urlToImage']}}" class="class-img-bottom img-fluid">	
+								</h4>		<br>
+						</div>
+					</div>
+		</div>
+		{% endfor %}
+	</div>
+</div>
+
+</body>
+</html>
